@@ -11,6 +11,9 @@ Steps:
 5.	Compare the accuracy and performance of the parallel implementation with the serial one.
 
 Key Learning Outcomes:
+
 •	Random number generation and statistical estimation.
+
 •	Managing shared variables and thread safety.
+
 •	Performance tuning for parallel simulations.
