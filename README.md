@@ -20,6 +20,12 @@ Key Learning Outcomes:
 •	Performance tuning for parallel simulations.
 
 
+Project Explanation 
+
+The goal of this project is to use OpenMP to parallelize and serialize the Monte Carlo method for estimating the value of Pi. The Monte 
+Carlo method is a statistical method that makes use of random sampling to address potentially deterministic mathematical issues. Through
+the usage of OpenMP, efficiency will be improved by dividing the computation over several threads, enabling rapid and more effective 
+calculation completion.
 
 
 Main class Explanation
