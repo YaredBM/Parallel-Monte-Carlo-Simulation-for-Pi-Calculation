@@ -18,3 +18,12 @@ Key Learning Outcomes:
 •	Managing shared variables and thread safety.
 
 •	Performance tuning for parallel simulations.
+
+
+Main class explanation
+
+Using the Monte Carlo method, the given C++ implementation calculates Pi's value. The main function invokes the calculatePi function to 
+estimate Pi, specifies the number of points (numPoints) to generate for the simulation, seeds the random number generator with the 
+current time, and prints the result. The calculatePi function creates a unit square with random points, determines if each point is 
+inside a quarter circle, and then estimates Pi using the ratio of points inside the circle to all of the points.
+
