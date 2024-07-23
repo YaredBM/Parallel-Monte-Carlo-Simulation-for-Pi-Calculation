@@ -20,10 +20,23 @@ Key Learning Outcomes:
 •	Performance tuning for parallel simulations.
 
 
-Main class explanation
 
-Using the Monte Carlo method, the given C++ implementation calculates Pi's value. The main function invokes the calculatePi function to 
-estimate Pi, specifies the number of points (numPoints) to generate for the simulation, seeds the random number generator with the 
-current time, and prints the result. The calculatePi function creates a unit square with random points, determines if each point is 
+
+Main class Explanation
+
+Using the Monte Carlo method, the given C++ implementation calculates Pi's value. The "main" function invokes the "calculatePi" function
+to estimate Pi, specifies the number of points ("numPoints") to generate for the simulation, seeds the random number generator with the 
+current time, and prints the result. The "calculatePi" function creates a unit square with random points, determines if each point is 
 inside a quarter circle, and then estimates Pi using the ratio of points inside the circle to all of the points.
+
+Parallel Version Class Explanation 
+
+In this instance, the given C++ application uses OpenMP for parallel processing along with the Monte Carlo approach to estimate the 
+value of Pi. Using parallel threads, the "calculatePi" function creates random points inside a unit square and determines if each point
+is inside a quarter circle. To guarantee diverse random values, the random number generator is seeded differently for each thread. The 
+count of points inside the circle is correctly accumulated across all threads thanks to the "#pragma omp for reduction(+:insideCircle)"
+directive. The primary function calls "calculatePi", sets the number of points, seeds the random number generator, and outputs the 
+estimated Pi value. This parallel strategy makes use of several CPU cores in an effort to increase performance.
+
+
 
