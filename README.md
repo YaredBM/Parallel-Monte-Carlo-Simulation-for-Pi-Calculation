@@ -65,7 +65,3 @@ estimated Pi value. This parallel strategy makes use of several CPU cores in an 
  The result is multiplied by 4 because we are working with a quarter circle.
 - So this code demonstrates the use of OpenMP to perform calculations in parallel while reducing the program execution time too.
   We also specify the number of threads using omp_set_num_threads, which allows us to control parallel execution.
-
-  
-
-  
