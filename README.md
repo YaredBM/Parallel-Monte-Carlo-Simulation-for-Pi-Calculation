@@ -66,3 +66,5 @@ estimated Pi value. This parallel strategy makes use of several CPU cores in an 
   We also specify the number of threads using omp_set_num_threads, which allows us to control parallel execution.
 
   
+
+  
