@@ -51,6 +51,7 @@ The purpose of the code is a Monte Carlo method to estimate the value of the num
 
 
 Parallel_Version_Threads_Configuration
+
 The purpose of this code is to demonstrate the use of the Monte Carlo method to estimate the value of the number 𝜋.
 Parallel region: Inside #pragma omp parallel, a parallel region is created where each thread executes a different copy of the code. Within this territory/region, random numbers are generated for each thread.
 Parallel loop: The #pragma omp for reduction(+:insideCircle) directive distributes loop data between threads and sums the values of the insideCircle variable from all threads.
