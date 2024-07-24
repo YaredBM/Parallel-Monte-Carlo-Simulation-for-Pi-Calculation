@@ -45,16 +45,24 @@ directive. The primary function calls "calculatePi", sets the number of points, 
 estimated Pi value. This parallel strategy makes use of several CPU cores in an effort to increase performance.
 
 
-Parallel_Version_Performance_Measurement to Parallel_Version
+                                                Parallel_Version_Performance_Measurement to Parallel_Version
 
-The purpose of the code is a Monte Carlo method to estimate the value of the number 𝜋. Using parallel computing, to speed up the process of generating + checking the number of random points. The code utilises the parallel computing capabilities of OpenMP. By splitting the task into multiple threads, we want to reduce the execution time of the programme.
- The Monte Carlo method applied here is our tool for numerical modelling.
+- The purpose of the code is a Monte Carlo method to estimate the value of the number 𝜋.
+  Using parallel computing, to speed up the process of generating + checking the number of random points. 
+• The code utilises the parallel computing capabilities of OpenMP.
+ By splitting the task into multiple threads, we want to reduce the execution time of the programme.
+• The Monte Carlo method applied here is our tool for numerical modelling.
 
 
-Parallel_Version_Threads_Configuration
+                                                     Parallel_Version_Threads_Configuration
 
-The purpose of this code is to demonstrate the use of the Monte Carlo method to estimate the value of the number 𝜋.
-Parallel region: Inside #pragma omp parallel, a parallel region is created where each thread executes a different copy of the code. Within this territory/region, random numbers are generated for each thread.
-Parallel loop: The #pragma omp for reduction(+:insideCircle) directive distributes loop data between threads and sums the values of the insideCircle variable from all threads.
-The value of π is estimated based on the ratio of points that fell inside the quarter circle to the total number of points generated. The result is multiplied by 4 because we are working with a quarter circle.
-So this code demonstrates the use of OpenMP to perform calculations in parallel while reducing the program execution time too. We also specify the number of threads using omp_set_num_threads, which allows us to control parallel execution. 
+- The purpose of this code is to demonstrate the use of the Monte Carlo method to estimate the value of the number 𝜋.
+• Parallel region: Inside #pragma omp parallel, a parallel region is created where each thread executes a different copy of the code.
+ Within this territory/region, random numbers are generated for each thread.
+• Parallel loop: The #pragma omp for reduction(+:insideCircle) directive distributes loop data between threads and sums the values of the insideCircle variable from all threads.
+• The value of π is estimated based on the ratio of points that fell inside the quarter circle to the total number of points generated.
+ The result is multiplied by 4 because we are working with a quarter circle.
+- So this code demonstrates the use of OpenMP to perform calculations in parallel while reducing the program execution time too.
+  We also specify the number of threads using omp_set_num_threads, which allows us to control parallel execution.
+
+  
