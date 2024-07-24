@@ -50,7 +50,7 @@ estimated Pi value. This parallel strategy makes use of several CPU cores in an 
 - The purpose of the code is a Monte Carlo method to estimate the value of the number 𝜋.
 * Using parallel computing, to speed up the process of generating + checking the number of random points.
   • The code utilises the parallel computing capabilities of OpenMP.
-    By splitting the task into multiple threads, we want to reduce the execution time of the programme.
+By splitting the task into multiple threads, we want to reduce the execution time of the programme.
 • The Monte Carlo method applied here is our tool for numerical modelling.
 
 
