@@ -20,29 +20,96 @@ Key Learning Outcomes:
 •	Performance tuning for parallel simulations.
 
 
-Project Explanation 
+                                                    Project Explanation 
 
-The goal of this project is to use OpenMP to parallelize and serialize the Monte Carlo method for estimating the value of Pi. The Monte 
-Carlo method is a statistical method that makes use of random sampling to address potentially deterministic mathematical issues. Through
-the usage of OpenMP, efficiency will be improved by dividing the computation over several threads, enabling rapid and more effective 
-calculation completion.
+Objective:
+
+This project aims to implement the Monte Carlo method for Pi value estimation in both serialised and parallelised forms. The project seeks to increase efficiency by spreading the computation across several threads using OpenMP for parallelisation, enabling quicker and more efficient calculation completion.
+
+A Review of the Monte Carlo Method 
+
+- Concept: A statistical method called the Monte Carlo method makes use of random sampling to address deterministic problems. In this project, points are generated at random within a unit square, and the number of points that fall inside the quarter circle engraved in the square is used to estimate the value of Pi.
+
+- Method:
+1. Random sampling: Create arbitrary locations inside the unit square.
+2. Point Verification: Verify that every point is contained within the quarter circle, that is, if x^2 + y^2 ≤ 1.
+3. Calculating Ratios: Determine the ratio between the total number of points and the points inside the quarter circle.
+4. Pi estimation: Since the quarter circle is one-fourth of the whole circle, multiply the ratio by four to get an estimate of Pi.
+
+Project Elements:
+
+1. Version in Serial Form:
+- Goal: To use a single thread to carry out the Monte Carlo approach.
+
+- Method:
+1. Provide a unit square with a predetermined number of randomly generated points.
+2. Ascertain the number of points that are contained within a quarter circle.
+3. Utilising the ratio of points inside the circle to total points, get the value of Pi.
+
+2. Parallelised Form:
+- Goal: To improve the Monte Carlo technique by parallelising the computation with OpenMP.
+
+- Procedure:
+1. To create random points inside a unit square, use multiple threads.
+2. The number of points on each thread that fall inside a quarter circle is determined independently.
+3. To estimate Pi, add together all of the threads' results.
+4. By seeding the random number generator differently for every thread, you can guarantee a diversity of random values.
+5. To control parallel execution and lessen synchronisation problems, use OpenMP directives.
 
 
-Main class Explanation
+                                                Detailed Implementation
 
-Using the Monte Carlo method, the given C++ implementation calculates Pi's value. The "main" function invokes the "calculatePi" function
-to estimate Pi, specifies the number of points ("numPoints") to generate for the simulation, seeds the random number generator with the 
-current time, and prints the result. The "calculatePi" function creates a unit square with random points, determines if each point is 
-inside a quarter circle, and then estimates Pi using the ratio of points inside the circle to all of the points.
 
-Parallel Version Class Explanation 
+                                                 Main class Explanation
 
-In this instance, the given C++ application uses OpenMP for parallel processing along with the Monte Carlo approach to estimate the 
-value of Pi. Using parallel threads, the "calculatePi" function creates random points inside a unit square and determines if each point
-is inside a quarter circle. To guarantee diverse random values, the random number generator is seeded differently for each thread. The 
-count of points inside the circle is correctly accumulated across all threads thanks to the "#pragma omp for reduction(+:insideCircle)"
-directive. The primary function calls "calculatePi", sets the number of points, seeds the random number generator, and outputs the 
-estimated Pi value. This parallel strategy makes use of several CPU cores in an effort to increase performance.
+- The Monte Carlo approach is used in the provided C++ implementation to determine the value of Pi.
+
+1. 'Main' Role: 
+- The goal is to configure the simulation's parameters, start the Pi computation, and show the outcome.
+
+- Actions:
+1. Define Number of Points: The number of random points to be generated for the simulation is specified by the numPoints variable.
+2. Seed the Random Number Generator: To guarantee that the simulation yields distinct outcomes on each run, the current time is used
+  to seed the random number generator.
+3. Call up the function calculatePi: To find the value of Pi, call the calculatePi function and pass in numPoints as an argument.
+4. Print the Outcome: Gives the console the estimated value of Pi.
+
+2. The 'calculatePi' function
+- The goal is to use the Monte Carlo method to estimate the value of Pi.
+
+- Actions:
+1. Create Random Points: Within a unit square, which has a side length of one, random points are created.
+2. Determine the Circle's Inside Points: Every point is examined to determine whether it is inside a quarter circle with a radius of 1.
+3. Calculate Pi: The ratio of the total number of points to the number of points inside the quarter circle is used to calculate Pi. To
+estimate Pi, we double this ratio by 4 because we are utilising a quarter circle.
+
+
+                                              Parallel Version Class Explanation 
+
+This C++ application uses the Monte Carlo method to calculate the value of Pi. It uses OpenMP for parallel processing, which allows for the efficient use of multiple CPU cores. 
+ 
+1. 'Main' Function: This C++ application sets up the simulation parameters, initiates the parallel Pi calculation, and displays the result. 
+
+- Steps:
+1. Define Number of Points: The variable numPoints specifies the number of random points to generate for the simulation.
+2. Seed the Random Number Generator: The random number generator is seeded differently for each thread to ensure diverse random values.
+3. Invoke the calculatePi Function: Calls the calculatePi function with numPoints as an argument to estimate the value of Pi using
+parallel threads.
+4. Print the Result: Outputs the estimated value.
+
+2. 'calculatePi' function
+- The goal is to use parallel processing and the Monte Carlo method to estimate the value of Pi.
+
+- Actions:
+1. Parallel Execution: The function parallelises the generation of random points and their check to see if they fall inside the quarter
+circle by using OpenMP.
+2. Create Random Points: Every thread creates a random point inside a unit square.
+3. Find the Points Inside the Circle: Every thread looks to see whether any of its points fall inside a quarter circle.
+4. Compile Findings: All threads contribute to the total number of points inside the circle by means of the '#pragma omp for
+reduction(+:insideCircle)' directive.
+5. Calculate Pi: Pi is calculated by multiplying the total number of points by the ratio of points inside the quarter circle, and then
+multiplying the result by 4.
+
 
 
                                                 Parallel_Version_Performance_Measurement to Parallel_Version
