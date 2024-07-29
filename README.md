@@ -117,8 +117,7 @@ reduction(+:insideCircle)' directive.
 multiplying the result by 4.
 
 
-
-                                                Parallel_Version_Performance_Measurement to Parallel_Version
+               Parallel_Version_Performance_Measurement to Parallel_Version
 
 - The purpose of the code is a Monte Carlo method to estimate the value of the number 𝜋.
 * Using parallel computing, to speed up the process of generating + checking the number of random points.
@@ -127,7 +126,7 @@ By splitting the task into multiple threads, we want to reduce the execution tim
 • The Monte Carlo method applied here is our tool for numerical modelling.
 
 
-                                                     Parallel_Version_Threads_Configuration
+                        Parallel_Version_Threads_Configuration
 
 - The purpose of this code is to demonstrate the use of the Monte Carlo method to estimate the value of the number 𝜋.
 • Parallel region: Inside #pragma omp parallel, a parallel region is created where each thread executes a different copy of the code.
