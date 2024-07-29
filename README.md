@@ -1,5 +1,11 @@
 # Parallel-Monte-Carlo-Simulation-for-Pi-Calculation
 
+Our team: 
+Yáred Iessé Bustillo Medina - 57963128
+Liana Mikhailova - 43583189
+Josué David Pavón - 93116997
+
+
 Objective: Implement a Monte Carlo simulation to estimate the value of Pi using OpenMP.
 
 Description: Monte Carlo simulations use random sampling to estimate mathematical results. The goal is to estimate Pi by randomly generating points in a unit square and counting how many falls within a quarter circle.
